@@ -3,11 +3,19 @@ buildscript {
 		mavenCentral()
 	}
 	dependencies {
-		classpath 'com.android.tools.build:gradle:0.13.3'
+		classpath 'com.android.tools.build:gradle:0.12.+'
+        classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.12.+'
 	}
 }
 
+apply plugin: 'android-sdk-manager'
 apply plugin: 'com.android.application'
+
+
+sdkManager {
+  emulatorVersion 'android-21'
+  emulatorArchitecture 'armeabi-v7a' // optional, defaults to arm
+}
 
 android {
 	compileSdkVersion 21
